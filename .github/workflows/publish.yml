@@ -1,0 +1,48 @@
+# Publish SvelteKit (adapter-static) site to GitHub Pages
+# - Uses Bun to install & run scripts (project uses bun as package manager)
+# - Builds the site with `bun run build` (package.json -> "build": "vite build")
+# - Uses GitHub's official Pages actions to upload and deploy the build folder
+
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: stable
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build site
+        run: bun run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # adapter-static writes the built site to "build/" by default
+          path: build
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
