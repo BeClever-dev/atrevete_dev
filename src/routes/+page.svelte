@@ -3,8 +3,15 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Card from '$lib/components/ui/card/card.svelte';
 	import Mail from '@lucide/svelte/icons/mail';
+
+	/* Assets */
 	import logo from '$lib/assets/logo_simple.png';
-	import whatsapp from '$lib/assets/whatsapp.svg';
+	import whatsapp from '$lib/assets/svg/whatsapp.svg';
+	import instagram from '$lib/assets/svg/instagram.svg';
+	import steelpanel_preview from '$lib/assets/img/steelpanel_preview.png';
+	import ecommerce_preview from '$lib/assets/img/ecommerce_preview.png';
+	import portfolio_preview from '$lib/assets/img/portfolio_preview.png';
+	const year = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -23,6 +30,7 @@
 		</a>
 		<nav class="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
 			<a href="#beneficios" class="transition hover:text-foreground">Beneficios</a>
+			<a href="#showcase" class="transition hover:text-foreground">Showcase</a>
 			<a href="#planes" class="transition hover:text-foreground">Planes</a>
 			<a href="#contacto" class="transition hover:text-foreground">Contacto</a>
 		</nav>
@@ -81,7 +89,7 @@
 							<span class="font-medium text-foreground">Sí</span>
 						</div>
 						<div class="flex items-center justify-between">
-							<span>Soporte 24/7</span>
+							<span>Soporte técnico</span>
 							<span class="font-medium text-foreground">Sí</span>
 						</div>
 					</div>
@@ -127,22 +135,7 @@
 			<div class="grid gap-6 md:grid-cols-3">
 				<Card class="overflow-hidden p-0">
 					<img
-						src="https://placehold.co/800x500.png?text=Sitio+Ecommerce"
-						alt="Preview de sitio ecommerce"
-						class="h-64 w-full object-cover"
-					/>
-					<div class="p-6">
-						<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Tienda lista</p>
-						<h3 class="mt-3 text-xl font-semibold">Ecommerce optimizado</h3>
-						<p class="mt-3 text-sm leading-7 text-muted-foreground">
-							Preview de plantilla creada para ventas en línea, con atención por WhatsApp y checkout
-							claro.
-						</p>
-					</div>
-				</Card>
-				<Card class="overflow-hidden p-0">
-					<img
-						src="https://placehold.co/800x500.png?text=Sitio+Portfolio"
+						src={portfolio_preview}
 						alt="Preview de sitio portfolio"
 						class="h-64 w-full object-cover"
 					/>
@@ -156,12 +149,27 @@
 				</Card>
 				<Card class="overflow-hidden p-0">
 					<img
-						src="https://placehold.co/800x500.png?text=Sitio+Landing"
-						alt="Preview de sitio landing"
+						src={ecommerce_preview}
+						alt="Preview de sitio ecommerce"
 						class="h-64 w-full object-cover"
 					/>
 					<div class="p-6">
-						<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Landing</p>
+						<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Ecommerce</p>
+						<h3 class="mt-3 text-xl font-semibold">Tienda optimizada</h3>
+						<p class="mt-3 text-sm leading-7 text-muted-foreground">
+							Preview de plantilla creada para ventas en línea, con atención por WhatsApp y checkout
+							listo.
+						</p>
+					</div>
+				</Card>
+				<Card class="overflow-hidden p-0">
+					<img
+						src={steelpanel_preview}
+						alt="Preview de sitio profesional"
+						class="h-64 w-full object-cover"
+					/>
+					<div class="p-6">
+						<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Profesional</p>
 						<h3 class="mt-3 text-xl font-semibold">Página de conversión</h3>
 						<p class="mt-3 text-sm leading-7 text-muted-foreground">
 							Modelo pensado para captar leads, destacar ofertas y facilitar contacto inmediato.
@@ -185,7 +193,7 @@
 						Perfecto para sitios personales o proyectos en crecimiento.
 					</p>
 					<p class="mt-6 text-3xl font-semibold">$15.000 CLP/mes</p>
-					<Button class="mt-6 w-full">Comenzar</Button>
+					<!-- <Button class="mt-6 w-full">Comenzar</Button> -->
 				</Card>
 				<Card class="relative border-primary/30 p-6 shadow-lg shadow-primary/10">
 					<h3 class="flex justify-between text-xl font-semibold">
@@ -196,7 +204,7 @@
 						Para emprendedores listos para dar el salto y tener llegar a sus clientes en línea.
 					</p>
 					<p class="mt-6 text-3xl font-semibold">$25.000 CLP/mes</p>
-					<Button class="mt-6 w-full">Elegir Business</Button>
+					<!-- <Button class="mt-6 w-full">Elegir Business</Button> -->
 				</Card>
 				<Card class="p-6">
 					<h3 class="text-xl font-semibold">Profesional</h3>
@@ -204,7 +212,7 @@
 						Para negocios que necesitan estabilidad, velocidad y soporte sólido.
 					</p>
 					<p class="mt-6 text-3xl font-semibold">$75.000 CLP/mes</p>
-					<Button class="mt-6 w-full">Hablar con ventas</Button>
+					<!-- <Button class="mt-6 w-full">Hablar con ventas</Button> -->
 				</Card>
 			</div>
 			<div
@@ -334,15 +342,15 @@
 					</p>
 				</div>
 				<a
-					href="mailto:contacto@atrevete.dev?subject=Cotizaci%C3%B3n%20de%20planes%20en%20Atr%C3%A9vete.dev"
-					aria-label="Contactar por correo electrónico"
-					><Button size="lg" class="cursor-pointer">Contactar por <Mail /></Button></a
+					href="mailto:contacto@atrevete.dev?subject=Contratar%20plan%20en%20Atr%C3%A9vete.dev"
+					aria-label="Contratar por correo electrónico"
+					><Button size="lg" class="cursor-pointer">Contratar por <Mail /></Button></a
 				>
 				<a
-					href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20cotizar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
-					aria-label="Contactar por WhatsApp"
+					href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20contratar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
+					aria-label="Contratar por WhatsApp"
 					><Button size="lg" class="cursor-pointer"
-						>Contactar por <img
+						>Contratar por <img
 							src={whatsapp}
 							alt="Ícono WhatsApp"
 							class="size-1/2 fill-white!"
@@ -353,3 +361,45 @@
 		</section>
 	</main>
 </div>
+
+<footer class="bg-primary p-8 text-primary-foreground">
+	<div
+		class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 sm:flex-row sm:justify-between"
+	>
+		<div class="text-center sm:text-left">
+			<p class="font-medium">Un servicio de BeClever SpA</p>
+			<p class="text-sm text-muted-foreground">© {year} BeClever SpA</p>
+		</div>
+
+		<div class="flex flex-wrap items-center gap-3">
+			<a
+				href="mailto:contacto@atrevete.dev"
+				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
+				aria-label="Contactar por correo electrónico"
+			>
+				<Mail class="h-4 w-4" />
+				<span class="text-sm">contacto@atrevete.dev</span>
+			</a>
+
+			<a
+				href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20cotizar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
+				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
+				aria-label="Contactar por WhatsApp"
+			>
+				<img src={whatsapp} alt="WhatsApp" class="h-4 w-4" />
+				<span class="text-sm">WhatsApp</span>
+			</a>
+
+			<a
+				href="https://www.instagram.com/atrevete_dev/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
+				aria-label="Visitar Instagram"
+			>
+				<img src={instagram} alt="Instagram logo" class="h-4 w-4" />
+				<span class="text-sm">@atrevete_dev</span>
+			</a>
+		</div>
+	</div>
+</footer>
