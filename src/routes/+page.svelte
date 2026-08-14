@@ -210,7 +210,7 @@
 				<p class="mt-3 text-sm leading-7 text-muted-foreground">
 					Para negocios que necesitan estabilidad, velocidad y soporte sólido.
 				</p>
-				<p class="mt-6 text-3xl font-semibold">$75.000 CLP/mes</p>
+				<p class="mt-6 text-3xl font-semibold">$35.000 CLP/mes</p>
 				<!-- <Button class="mt-6 w-full">Hablar con ventas</Button> -->
 			</Card>
 		</div>
@@ -230,34 +230,28 @@
 					</thead>
 					<tbody class="divide-y divide-border/60 [&_td]:not-first:text-center">
 						<tr>
-							<td class="px-4 py-4 font-medium text-foreground">Servidor</td>
-							<td class="px-4 py-4">Compartido</td>
-							<td class="px-4 py-4">Compartido</td>
-							<td class="px-4 py-4">Dedicado</td>
-						</tr>
-						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">Costo de configuración</td>
 							<td class="px-4 py-4">Incluido</td>
 							<td class="px-4 py-4">Incluido</td>
 							<td class="px-4 py-4">Incluido</td>
 						</tr>
 						<tr>
-							<td class="px-4 py-4 font-medium text-foreground">CPU</td>
+							<td class="px-4 py-4 font-medium text-foreground">vCPU</td>
 							<td class="px-4 py-4">1</td>
 							<td class="px-4 py-4">1</td>
-							<td class="px-4 py-4">2</td>
+							<td class="px-4 py-4">1</td>
 						</tr>
 						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">RAM</td>
 							<td class="px-4 py-4">1 GB</td>
 							<td class="px-4 py-4">1 GB</td>
-							<td class="px-4 py-4">4 GB</td>
+							<td class="px-4 py-4">2 GB</td>
 						</tr>
 						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">Almacenamiento</td>
 							<td class="px-4 py-4">25 GB</td>
 							<td class="px-4 py-4">25 GB</td>
-							<td class="px-4 py-4">80 GB</td>
+							<td class="px-4 py-4">50 GB</td>
 						</tr>
 						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">Plantilla profesional</td>
