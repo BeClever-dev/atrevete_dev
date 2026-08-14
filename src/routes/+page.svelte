@@ -381,14 +381,14 @@
 			</a>
 
 			<a
-				href="https://www.instagram.com/atrevete_dev/"
+				href="https://www.instagram.com/atrevete.dev/"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
 				aria-label="Visitar Instagram"
 			>
 				<img src={instagram} alt="Instagram logo" class="h-4 w-4" />
-				<span class="text-sm">@atrevete_dev</span>
+				<span class="text-sm">@atrevete.dev</span>
 			</a>
 		</div>
 	</div>
