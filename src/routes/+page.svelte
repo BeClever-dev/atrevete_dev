@@ -250,13 +250,13 @@
 						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">RAM</td>
 							<td class="px-4 py-4">1 GB</td>
-							<td class="px-4 py-4">2 GB</td>
+							<td class="px-4 py-4">1 GB</td>
 							<td class="px-4 py-4">4 GB</td>
 						</tr>
 						<tr>
 							<td class="px-4 py-4 font-medium text-foreground">Almacenamiento</td>
 							<td class="px-4 py-4">25 GB</td>
-							<td class="px-4 py-4">50 GB</td>
+							<td class="px-4 py-4">25 GB</td>
 							<td class="px-4 py-4">80 GB</td>
 						</tr>
 						<tr>
