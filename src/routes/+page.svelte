@@ -3,14 +3,12 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Card from '$lib/components/ui/card/card.svelte';
 	import Mail from '@lucide/svelte/icons/mail';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	/* Assets */
-	import logo from '$lib/assets/logo_simple.png';
 	import whatsapp from '$lib/assets/svg/whatsapp.svg';
 	import instagram from '$lib/assets/svg/instagram.svg';
-	import steelpanel_preview from '$lib/assets/img/steelpanel_preview.png';
-	import ecommerce_preview from '$lib/assets/img/ecommerce_preview.png';
-	import portfolio_preview from '$lib/assets/img/portfolio_preview.png';
+	import { resolve, asset } from '$app/paths';
 	const year = new Date().getFullYear();
 </script>
 
@@ -21,21 +19,6 @@
 		content="Sitios profesionales para Emprendedores con velocidad, soporte y seguridad para negocios en crecimiento."
 	/>
 </svelte:head>
-
-<header class="bg-primary px-6 py-6 text-secondary/60 lg:px-8">
-	<div class="mx-auto flex max-w-7xl items-center justify-between">
-		<a href="#top" class="flex items-center gap-3 text-secondary">
-			<img src={logo} alt="Atrévete.dev" class="h-10 w-auto object-contain" />
-			<span class="text-lg font-semibold tracking-tight">Atrévete.dev</span>
-		</a>
-		<nav class="hidden items-center gap-6 text-sm md:flex">
-			<a href="#beneficios" class="transition hover:text-secondary">Beneficios</a>
-			<a href="#showcase" class="transition hover:text-secondary">Showcase</a>
-			<a href="#planes" class="transition hover:text-secondary">Planes</a>
-			<a href="#contacto" class="transition hover:text-secondary">Contacto</a>
-		</nav>
-	</div>
-</header>
 
 <main class="mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-20 lg:px-8">
 	<section class="grid items-center gap-10 pt-6 lg:grid-cols-[1.1fr_0.9fr] lg:pt-16">
@@ -122,10 +105,12 @@
 		</Card>
 	</section>
 
-	<section id="showcase" class="space-y-8">
+	<section id="plantillas" class="space-y-8">
 		<div class="max-w-2xl space-y-3">
-			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Showcase</p>
-			<h2 class="text-3xl font-semibold tracking-tight">Trabajos anteriores y plantillas listas</h2>
+			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Plantillas</p>
+			<h2 class="text-3xl font-semibold tracking-tight">
+				Plantillas modernas y listas para tu nuevo sitio
+			</h2>
 			<p class="text-muted-foreground">
 				Selecciona una vista previa de sitio web ya hecha o una plantilla disponible para tu
 				negocio.
@@ -134,13 +119,13 @@
 		<div class="grid gap-6 md:grid-cols-3">
 			<Card class="overflow-hidden p-0">
 				<img
-					src={portfolio_preview}
+					src={asset('/templates/action.png')}
 					alt="Preview de sitio portfolio"
 					class="h-64 w-full object-cover"
 				/>
 				<div class="p-6">
 					<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Portfolio</p>
-					<h3 class="mt-3 text-xl font-semibold">Sitio para emprendedores</h3>
+					<h3 class="mt-3 text-xl font-semibold">Sitio para freelancers</h3>
 					<p class="mt-3 text-sm leading-7 text-muted-foreground">
 						Vista previa de plantilla para servicios, testimonios y contacto directo con clientes.
 					</p>
@@ -148,7 +133,7 @@
 			</Card>
 			<Card class="overflow-hidden p-0">
 				<img
-					src={ecommerce_preview}
+					src={asset('/templates/craftis.png')}
 					alt="Preview de sitio ecommerce"
 					class="h-64 w-full object-cover"
 				/>
@@ -163,7 +148,7 @@
 			</Card>
 			<Card class="overflow-hidden p-0">
 				<img
-					src={steelpanel_preview}
+					src={asset('/templates/edifice.png')}
 					alt="Preview de sitio profesional"
 					class="h-64 w-full object-cover"
 				/>
@@ -175,6 +160,12 @@
 					</p>
 				</div>
 			</Card>
+		</div>
+		<div class="max-w-2xl space-y-3">
+			<a href={resolve('/plantillas')}
+				><Button size="lg" class="cursor-pointer">Ver plantillas disponibles <ArrowRight /></Button
+				></a
+			>
 		</div>
 	</section>
 
@@ -192,7 +183,6 @@
 					Perfecto para sitios personales o proyectos en crecimiento.
 				</p>
 				<p class="mt-6 text-3xl font-semibold">$15.000 CLP/mes</p>
-				<!-- <Button class="mt-6 w-full">Comenzar</Button> -->
 			</Card>
 			<Card class="relative border-primary/30 p-6 shadow-lg shadow-primary/10">
 				<h3 class="flex justify-between text-xl font-semibold">
@@ -200,10 +190,9 @@
 					<Badge class="border-primary/20 bg-primary/10 text-primary">Popular</Badge>
 				</h3>
 				<p class="mt-3 text-sm leading-7 text-muted-foreground">
-					Para emprendedores listos para dar el salto y tener llegar a sus clientes en línea.
+					Para emprendedores listos para dar el salto y llegar a sus clientes en línea.
 				</p>
 				<p class="mt-6 text-3xl font-semibold">$25.000 CLP/mes</p>
-				<!-- <Button class="mt-6 w-full">Elegir Business</Button> -->
 			</Card>
 			<Card class="p-6">
 				<h3 class="text-xl font-semibold">Profesional</h3>
@@ -211,7 +200,6 @@
 					Para negocios que necesitan estabilidad, velocidad y soporte sólido.
 				</p>
 				<p class="mt-6 text-3xl font-semibold">$35.000 CLP/mes</p>
-				<!-- <Button class="mt-6 w-full">Hablar con ventas</Button> -->
 			</Card>
 		</div>
 		<div class="overflow-hidden rounded-3xl border border-border/80 bg-background/90 p-6 shadow-sm">
