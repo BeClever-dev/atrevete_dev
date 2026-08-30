@@ -7,9 +7,7 @@
 
 	/* Assets */
 	import whatsapp from '$lib/assets/svg/whatsapp.svg';
-	import instagram from '$lib/assets/svg/instagram.svg';
 	import { resolve, asset } from '$app/paths';
-	const year = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -339,45 +337,3 @@
 		</div>
 	</section>
 </main>
-
-<footer class="bg-primary p-8 text-primary-foreground">
-	<div
-		class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 sm:flex-row sm:justify-between"
-	>
-		<div class="text-center sm:text-left">
-			<p class="font-medium">Un servicio de BeClever SpA</p>
-			<p class="text-sm text-muted-foreground">© {year} BeClever SpA</p>
-		</div>
-
-		<div class="flex flex-wrap items-center gap-3">
-			<a
-				href="mailto:contacto@atrevete.dev"
-				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
-				aria-label="Contactar por correo electrónico"
-			>
-				<Mail class="h-4 w-4" />
-				<span class="text-sm">contacto@atrevete.dev</span>
-			</a>
-
-			<a
-				href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20cotizar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
-				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
-				aria-label="Contactar por WhatsApp"
-			>
-				<img src={whatsapp} alt="WhatsApp" class="h-4 w-4" />
-				<span class="text-sm">WhatsApp</span>
-			</a>
-
-			<a
-				href="https://www.instagram.com/atrevete.dev/"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
-				aria-label="Visitar Instagram"
-			>
-				<img src={instagram} alt="Instagram logo" class="h-4 w-4" />
-				<span class="text-sm">@atrevete.dev</span>
-			</a>
-		</div>
-	</div>
-</footer>

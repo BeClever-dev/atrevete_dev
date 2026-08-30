@@ -173,7 +173,7 @@
 </svelte:head>
 
 <main class="mx-auto flex max-w-7xl flex-col gap-20 px-6 py-20 lg:px-8">
-	<section id="showcase" class="space-y-8">
+	<section class="space-y-8">
 		<div class="max-w-2xl space-y-3">
 			<h2 class="text-3xl font-semibold tracking-tight">
 				Plantillas profesionales y modernas para tu negocio
@@ -196,10 +196,11 @@
 						rel="external"
 						target="_blank"
 						referrerpolicy="no-referrer"
-						class="invisible absolute top-2 right-2 group-hover:visible"
+						class="absolute top-2 right-2 md:invisible md:group-hover:visible"
 					>
 						<Button size="sm" class="cursor-pointer"
-							>Previsualizar <ExternalLink size="12" /></Button
+							><span class="hidden md:inline">Previsualizar</span>
+							<ExternalLink size="12" /></Button
 						>
 					</a>
 					<div class="p-6">
