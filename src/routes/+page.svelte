@@ -4,10 +4,35 @@
 	import Card from '$lib/components/ui/card/card.svelte';
 	import Mail from '@lucide/svelte/icons/mail';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-
-	/* Assets */
+	import * as Chart from '$lib/components/ui/chart/index.js';
 	import whatsapp from '$lib/assets/svg/whatsapp.svg';
 	import { resolve, asset } from '$app/paths';
+	import { LineChart } from 'layerchart';
+
+	let width = $state<number>(0);
+	const formatter = new Intl.DateTimeFormat('es-CL', { month: 'long' });
+	const months = Array.from({ length: 12 }, (_, i) => formatter.format(new Date(2000, i)));
+
+	const startMonth = new Date().getMonth();
+
+	const chartData = [
+		{ month: 'Hoy', discount: 0 },
+		...Array.from({ length: 12 }, (_, i) => {
+			const m = (startMonth + i + 1) % 12;
+			const elapsed = i + 1;
+			return {
+				month: months[m],
+				discount: elapsed >= 12 ? 20 : elapsed >= 6 ? 10 : 0
+			};
+		}),
+		{ month: '♾️', discount: 20 }
+	];
+
+	const chartConfig = {
+		discount: {
+			color: 'var(--chart-2)'
+		}
+	} satisfies Chart.ChartConfig;
 </script>
 
 <svelte:head>
@@ -17,6 +42,8 @@
 		content="Sitios profesionales para Emprendedores con velocidad, soporte y seguridad para negocios en crecimiento."
 	/>
 </svelte:head>
+
+<svelte:window bind:innerWidth={width} />
 
 <main class="mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-20 lg:px-8">
 	<section class="grid items-center gap-10 pt-6 lg:grid-cols-[1.1fr_0.9fr] lg:pt-16">
@@ -85,6 +112,13 @@
 			<p class="mt-3 text-sm leading-7 text-muted-foreground">
 				Doble firewall y fail2ban para bloquear bots y ataques. Además, todos los sitios incluyen
 				TLS de sitio seguro, hCaptcha y encriptación de discos.
+			</p>
+		</Card>
+		<Card class="p-6">
+			<h2 class="text-xl font-semibold">Plantillas personalizables</h2>
+			<p class="mt-3 text-sm leading-7 text-muted-foreground">
+				Plantillas profesionales, completamente personalizables a la medida de cada emprendedor,
+				donde puedes ajustar cada detalle a tu negocio.
 			</p>
 		</Card>
 		<Card class="p-6">
@@ -302,6 +336,56 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+	</section>
+
+	<section id="fidelidad" class="space-y-8">
+		<div class="max-w-2xl space-y-3">
+			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Fidelidad</p>
+			<h2 class="text-3xl font-semibold tracking-tight">
+				¡Hasta un 20% de descuento por preferirnos!
+			</h2>
+			<p class="text-muted-foreground">
+				Nos alegra que nos prefieras, y queremos alegrarte de la misma manera. Es por eso que hemos
+				decidido que tu tiempo con nosotros debe ser recompensado con un 10% de descuento <b
+					>permanente</b
+				> en tu suscripción tras tus primeros 6 meses con nosotros, y con un 20% tras un año.
+			</p>
+		</div>
+		<div class="w-full">
+			<Chart.Container config={chartConfig} class="h-55 w-full sm:h-80">
+				<LineChart
+					data={chartData}
+					x="month"
+					y="discount"
+					series={[
+						{
+							key: 'discount',
+							color: chartConfig.discount.color
+						}
+					]}
+					props={{
+						xAxis: {
+							format: (v) => (width >= 980 ? v : v.slice(0, 3)),
+							ticks: width >= 980 ? undefined : 4
+						},
+						yAxis: {
+							format: (v) => v + '%'
+						}
+					}}
+				>
+					{#snippet tooltip()}
+						{#snippet formatter(item: unknown)}
+							{@const value = (item as { value: number }).value}
+							<span class="font-medium">
+								{value === 0 ? 'Sin descuentos' : `¡Descuento del ${value}%!`}
+							</span>
+						{/snippet}
+
+						<Chart.Tooltip label="Descuento" hideIndicator hideLabel {formatter} />
+					{/snippet}
+				</LineChart>
+			</Chart.Container>
 		</div>
 	</section>
 

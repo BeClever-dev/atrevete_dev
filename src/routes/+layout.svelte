@@ -6,30 +6,67 @@
 	import instagram from '$lib/assets/svg/instagram.svg';
 	import whatsapp from '$lib/assets/svg/whatsapp.svg';
 	import Mail from '@lucide/svelte/icons/mail';
+	import Button from '@/components/ui/button/button.svelte';
+	import Menu from '@lucide/svelte/icons/menu';
+	import * as Sheet from '$lib/components/ui/sheet/index.js';
 
 	let { children } = $props();
 
+	const links = [
+		{ label: 'Beneficios', href: resolve('/#beneficios') },
+		{ label: 'Planes', href: resolve('/#planes') },
+		{ label: 'Plantillas', href: resolve('/plantillas') },
+		{ label: 'Preguntas Frecuentes', href: resolve('/preguntas-frecuentes') },
+		{ label: 'Contacto', href: resolve('/#contacto') }
+	];
+
 	const year = new Date().getFullYear();
+	let open = $state(false);
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <div class="min-h-screen bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_45%)]">
-	<header class="bg-primary px-6 py-6 text-secondary/60 lg:px-8">
+	<header
+		class="sticky top-0 z-50 bg-primary px-4 py-4 text-secondary/60 sm:px-6 md:relative lg:px-8"
+	>
 		<div class="mx-auto flex max-w-7xl items-center justify-between">
 			<a href={resolve('/#top')} class="flex items-center gap-3 text-secondary">
 				<img src={logo} alt="Atrévete.dev" class="h-10 w-auto object-contain" />
-				<span class="text-lg font-semibold tracking-tight">Atrévete.dev</span>
+				<span class="hidden text-lg font-semibold tracking-tight md:inline">Atrévete.dev</span>
 			</a>
 			<nav class="hidden items-center gap-6 text-sm md:flex">
-				<a href={resolve('/#beneficios')} class="transition hover:text-secondary">Beneficios</a>
-				<a href={resolve('/#planes')} class="transition hover:text-secondary">Planes</a>
-				<a href={resolve('/plantillas')} class="transition hover:text-secondary">Plantillas</a>
-				<a href={resolve('/preguntas-frecuentes')} class="transition hover:text-secondary"
-					>Preguntas Frecuentes</a
-				>
-				<a href={resolve('/#contacto')} class="transition hover:text-secondary">Contacto</a>
+				{#each links as link (link.href)}
+					<a href={link.href} class="transition hover:text-secondary">{link.label}</a>
+				{/each}
 			</nav>
+
+			<!-- Mobile Navigation -->
+			<Sheet.Root bind:open>
+				<Sheet.Trigger class="md:hidden">
+					<Button variant="ghost" size="sm" class="text-secondary">
+						<Menu class="size-6" />
+						<span class="sr-only">Abrir menú de navegación</span>
+					</Button>
+				</Sheet.Trigger>
+				<Sheet.Content side="right" class="w-72 bg-primary text-secondary">
+					<Sheet.Header>
+						<Sheet.Title class="text-secondary">Atrévete.dev</Sheet.Title>
+						<Sheet.Description class="sr-only">Menú de navegación principal</Sheet.Description>
+					</Sheet.Header>
+					<nav class="flex flex-col gap-1 px-4 text-base">
+						{#each links as link (link.href)}
+							<a
+								href={link.href}
+								onclick={() => (open = false)}
+								class="rounded-md px-3 py-3 transition hover:bg-secondary/10 hover:text-secondary"
+							>
+								{link.label}
+							</a>
+						{/each}
+					</nav>
+				</Sheet.Content>
+			</Sheet.Root>
 		</div>
 	</header>
 
