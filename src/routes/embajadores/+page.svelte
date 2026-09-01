@@ -33,7 +33,7 @@
 	<title>Atrévete.dev | Embajadores</title>
 	<meta
 		name="description"
-		content="Programa de embajadores de Atrévete.dev: comparte tu código, gana comisión y ayuda a más clientes a acceder a un descuento del 10% en sus primeros 6 meses."
+		content="Programa de embajadores de Atrévete.dev: comparte tu código, gana comisión por publicidad y ayuda a más clientes a acceder a un descuento del 10% en sus primeros 6 meses."
 	/>
 </svelte:head>
 
@@ -42,7 +42,7 @@
 		<div class="space-y-6">
 			<Badge class="border-primary/20 bg-primary/10 text-primary">Programa de embajadores</Badge>
 			<h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-				Gana comisiones compartiendo Atrévete.dev.
+				Recomienda Atrévete.dev y gana comisiones por publicidad.
 			</h1>
 			<p class="max-w-2xl text-lg leading-8 text-muted-foreground">
 				Un embajador es un promotor o afiliado de Atrévete.dev. Su labor es la difusión y
@@ -121,8 +121,8 @@
 				</div>
 				<h3 class="text-xl font-semibold">4. Cobro mensual</h3>
 				<p class="mt-3 text-sm leading-7 text-muted-foreground">
-					Cada mes generamos una orden de compra con tus ganancias y tú debes emitir una boleta de
-					honorarios para que podamos transferir el pago.
+					Cada mes generamos un resumen mensual de comisiones con tus ganancias y tú debes emitir
+					una boleta de honorarios para que podamos transferir el pago.
 				</p>
 			</Card>
 		</div>
@@ -152,10 +152,14 @@
 					• Todo afiliado que recomiende el servicio a cambio de dinero debe indicarlo visiblemente:
 					“Afiliado de Atrévete.dev” o “Gano comisión por servicios de publicidad”
 				</li>
-				<li>• Sólo se aceptan embajadores de nacionalidad chilena residentes en Chile.</li>
 				<li>
-					• Mensualmente se genera una orden de compra con el monto de la comisión a pagar y el
-					embajador debe emitir una boleta de honorarios para que podamos transferir el pago.
+					• Sólo se aceptan embajadores residentes en Chile, con RUT chileno vigente, que puedan
+					emitir boletas de honorarios dentro del país.
+				</li>
+				<li>
+					• Mensualmente se genera un resumen mensual de comisiones con el monto de la comisión a
+					pagar y el embajador debe emitir una boleta de honorarios para que podamos transferir el
+					pago.
 				</li>
 			</ul>
 		</div>
@@ -247,7 +251,7 @@
 					¿Listo para empezar?
 				</p>
 				<h2 class="text-3xl font-semibold tracking-tight">
-					Haz crecer tu red y gana con cada venta.
+					Recomienda y gana con cada cliente que use tu código.
 				</h2>
 			</div>
 
