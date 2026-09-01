@@ -20,7 +20,6 @@
 	let clients = $state(5);
 
 	let monthlyCommission = $derived(selectedPlan * clients * commissionRate);
-	let annualCommission = $derived(monthlyCommission * 12);
 
 	const moneyFormatter = new Intl.NumberFormat('es-CL', {
 		style: 'currency',
@@ -150,7 +149,7 @@
 				</li>
 				<li>
 					• Todo afiliado que recomiende el servicio a cambio de dinero debe indicarlo visiblemente:
-					“Afiliado de Atrévete.dev” o “Gano comisión por servicios de publicidad”
+					“Afiliado de Atrévete.dev” o “Gano comisión por servicios de publicidad”.
 				</li>
 				<li>
 					• Sólo se aceptan embajadores residentes en Chile, con RUT chileno vigente, que puedan
@@ -230,12 +229,6 @@
 							<span>Fórmula</span>
 							<span class="font-medium text-foreground">
 								{moneyFormatter.format(selectedPlan)} × {clients} × 10%
-							</span>
-						</div>
-						<div class="flex items-center justify-between gap-4">
-							<span>Comisión total</span>
-							<span class="font-medium text-foreground">
-								{moneyFormatter.format(annualCommission)}
 							</span>
 						</div>
 					</div>
