@@ -45,8 +45,10 @@
 				Gana comisiones compartiendo Atrévete.dev.
 			</h1>
 			<p class="max-w-2xl text-lg leading-8 text-muted-foreground">
-				Un embajador es un revendedor de Atrévete.dev. Puedes recomendar nuestro servicio a
-				clientes, entregarles un código exclusivo y ganar una comisión por cada venta que generes.
+				Un embajador es un promotor o afiliado de Atrévete.dev. Su labor es la difusión y
+				recomendación del servicio, siempre dejando claro que la venta se celebra directamente entre
+				Atrévete.dev y el cliente. El embajador no intermedia ni celebra la venta, sino que
+				recomienda el servicio y comparte un código asociado.
 			</p>
 		</div>
 
@@ -105,10 +107,10 @@
 				>
 					<Percent class="h-5 w-5" />
 				</div>
-				<h3 class="text-xl font-semibold">3. Tú ganas comisión</h3>
+				<h3 class="text-xl font-semibold">3. Ganas comisión</h3>
 				<p class="mt-3 text-sm leading-7 text-muted-foreground">
-					Por cada compra realizada, recibes una comisión del 10% sobre el monto de la venta de tu
-					cliente.
+					Por las compras asociadas a tu código, recibes una comisión por servicios de publicidad
+					equivalente al 10% del monto asociado a la compra del cliente.
 				</p>
 			</Card>
 			<Card class="p-6">
@@ -133,16 +135,26 @@
 			</p>
 			<h2 class="text-3xl font-semibold tracking-tight">Lo importante para entender el programa</h2>
 			<ul class="space-y-3 text-base leading-7 text-muted-foreground">
-				<li>• Un embajador es un revendedor de Atrévete.dev.</li>
+				<li>• Un embajador es un promotor o afiliado de Atrévete.dev.</li>
+				<li>
+					• Su labor es la difusión y recomendación del servicio, dejando siempre claro que la venta
+					se celebra directamente entre Atrévete.dev y el cliente.
+				</li>
 				<li>
 					• Cada embajador recibe un código que puede ser usado por sus clientes para reclamar un
 					10% de descuento en los primeros 6 meses de su suscripción.
 				</li>
 				<li>
-					• El embajador gana una comisión del 10% sobre las compras realizadas por sus clientes.
+					• La comisión por servicios de publicidad corresponde al 10% del monto asociado a las
+					compras vinculadas al código del embajador.
 				</li>
 				<li>
-					• Mensualmente se genera una orden de compra con el monto de las comisiones a pagar y el
+					• Todo afiliado que recomiende el servicio a cambio de dinero debe indicarlo visiblemente:
+					“Afiliado de Atrévete.dev” o “Gano comisión por servicios de publicidad”
+				</li>
+				<li>• Sólo se aceptan embajadores de nacionalidad chilena residentes en Chile.</li>
+				<li>
+					• Mensualmente se genera una orden de compra con el monto de la comisión a pagar y el
 					embajador debe emitir una boleta de honorarios para que podamos transferir el pago.
 				</li>
 			</ul>
