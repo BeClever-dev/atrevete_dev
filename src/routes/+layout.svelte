@@ -16,6 +16,7 @@
 		{ label: 'Beneficios', href: resolve('/#beneficios') },
 		{ label: 'Planes', href: resolve('/#planes') },
 		{ label: 'Plantillas', href: resolve('/plantillas') },
+		{ label: 'Embajadores', href: resolve('/embajadores') },
 		{ label: 'Preguntas Frecuentes', href: resolve('/preguntas-frecuentes') },
 		{ label: 'Contacto', href: resolve('/#contacto') }
 	];
