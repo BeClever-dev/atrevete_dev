@@ -160,6 +160,15 @@
 			previewURL: 'https://edifice.themerex.net/?storefront=envato-elements',
 			description: '',
 			tags: ['construcción', 'profesional', 'ingeniería']
+		},
+		{
+			img: '/templates/petmania.png',
+			name: 'PetMania',
+			byName: 'vamtam',
+			byURL: 'https://app.envato.com/search?itemType=wordpress&filter.portfolio=vamtam',
+			previewURL: 'https://petmania.vamtam.com/landing-page?storefront=envato-elements',
+			description: '',
+			tags: ['ecommerce', 'mascotas']
 		}
 	];
 </script>
