@@ -371,6 +371,9 @@
 						},
 						yAxis: {
 							format: (v) => v + '%'
+						},
+						spline: {
+							strokeWidth: 2.5
 						}
 					}}
 				>
@@ -408,7 +411,7 @@
 				><Button size="lg" class="cursor-pointer">Contratar por <Mail /></Button></a
 			>
 			<a
-				href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20contratar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
+				href="https://wa.me/56920080688?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20contratar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
 				aria-label="Contratar por WhatsApp"
 				><Button size="lg" class="cursor-pointer"
 					>Contratar por <img

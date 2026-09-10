@@ -255,7 +255,7 @@
 				<Button size="lg" class="cursor-pointer">Hablar por <Mail /></Button>
 			</a>
 			<a
-				href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20programa%20de%20embajadores%20de%20Atr%C3%A9vete.dev"
+				href="https://wa.me/56920080688?text=%C2%A1Hola%21%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20programa%20de%20embajadores%20de%20Atr%C3%A9vete.dev"
 				aria-label="Hablar por WhatsApp"
 			>
 				<Button size="lg" class="cursor-pointer"

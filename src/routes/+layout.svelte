@@ -9,6 +9,10 @@
 	import Button from '@/components/ui/button/button.svelte';
 	import Menu from '@lucide/svelte/icons/menu';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
+	import { ModeWatcher } from 'mode-watcher';
+	import MoonIcon from '@lucide/svelte/icons/moon';
+	import SunIcon from '@lucide/svelte/icons/sun';
+	import { toggleMode } from 'mode-watcher';
 
 	let { children } = $props();
 
@@ -71,8 +75,24 @@
 		</div>
 	</header>
 
+	<ModeWatcher />
+
 	{@render children()}
 
+	<Button
+		onclick={toggleMode}
+		variant="outline"
+		size="icon"
+		class="sticky bottom-10 left-10 border-foreground/30 bg-foreground/10 text-foreground hover:cursor-pointer hover:bg-foreground/20 hover:text-foreground dark:border-primary-foreground/40 dark:bg-primary-foreground/10 dark:text-primary-foreground dark:hover:bg-primary-foreground/20 dark:hover:text-primary-foreground"
+	>
+		<SunIcon
+			class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all! dark:scale-0 dark:-rotate-90"
+		/>
+		<MoonIcon
+			class="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all! dark:scale-100 dark:rotate-0"
+		/>
+		<span class="sr-only">Toggle theme</span>
+	</Button>
 	<footer class="bg-primary p-8 text-primary-foreground">
 		<div
 			class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 sm:flex-row sm:justify-between"
@@ -93,7 +113,7 @@
 				</a>
 
 				<a
-					href="https://wa.me/56932638980?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20cotizar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
+					href="https://wa.me/56920080688?text=%C2%A1Hola%21%20Me%20gustar%C3%ADa%20cotizar%20uno%20de%20sus%20planes%20en%20Atr%C3%A9vete.dev"
 					class="flex items-center gap-2 rounded-md bg-background/5 px-3 py-2 transition hover:bg-background/10"
 					aria-label="Contactar por WhatsApp"
 				>
