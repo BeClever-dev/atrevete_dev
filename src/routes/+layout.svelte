@@ -83,7 +83,7 @@
 		onclick={toggleMode}
 		variant="outline"
 		size="icon"
-		class="sticky bottom-10 left-10 border-foreground/30 bg-foreground/10 text-foreground hover:cursor-pointer hover:bg-foreground/20 hover:text-foreground dark:border-primary-foreground/40 dark:bg-primary-foreground/10 dark:text-primary-foreground dark:hover:bg-primary-foreground/20 dark:hover:text-primary-foreground"
+		class="sticky bottom-5 left-5 border-foreground/30 bg-foreground/10 text-foreground hover:cursor-pointer hover:bg-foreground/20 hover:text-foreground md:bottom-10 md:left-10 dark:border-primary-foreground/40 dark:bg-primary-foreground/10 dark:text-primary-foreground dark:hover:bg-primary-foreground/20 dark:hover:text-primary-foreground"
 	>
 		<SunIcon
 			class="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all! dark:scale-0 dark:-rotate-90"
