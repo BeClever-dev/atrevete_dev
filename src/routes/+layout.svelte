@@ -38,9 +38,7 @@
 		<div class="mx-auto flex max-w-7xl items-center justify-between">
 			<a href={resolve('/#top')} class="flex items-center gap-3 text-primary-foreground">
 				<img src={logo} alt="Atrévete.dev" class="h-10 w-auto rounded-full object-contain" />
-				<span class="hidden font-heading text-lg font-semibold tracking-tight md:inline"
-					>Atrévete.dev</span
-				>
+				<span class="hidden text-lg font-semibold tracking-tight md:inline">Atrévete.dev</span>
 			</a>
 			<nav class="hidden items-center gap-6 text-sm md:flex">
 				{#each links as link (link.href)}
