@@ -12,9 +12,9 @@
 
 <div
 	bind:this={ref}
-	data-slot="card-action"
+	data-slot="field-group"
 	class={cn(
-		"col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+		"gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 group/field-group @container/field-group flex w-full flex-col",
 		className
 	)}
 	{...restProps}

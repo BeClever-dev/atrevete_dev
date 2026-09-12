@@ -31,32 +31,34 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="min-h-screen bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_45%)]">
+<div class="min-h-screen">
 	<header
-		class="sticky top-0 z-50 bg-primary px-4 py-4 text-secondary/60 sm:px-6 md:relative lg:px-8"
+		class="sticky top-0 z-50 bg-primary px-4 py-4 text-primary-foreground/60 sm:px-6 md:relative lg:px-8"
 	>
 		<div class="mx-auto flex max-w-7xl items-center justify-between">
-			<a href={resolve('/#top')} class="flex items-center gap-3 text-secondary">
-				<img src={logo} alt="Atrévete.dev" class="h-10 w-auto object-contain" />
-				<span class="hidden text-lg font-semibold tracking-tight md:inline">Atrévete.dev</span>
+			<a href={resolve('/#top')} class="flex items-center gap-3 text-primary-foreground">
+				<img src={logo} alt="Atrévete.dev" class="h-10 w-auto rounded-full object-contain" />
+				<span class="hidden font-heading text-lg font-semibold tracking-tight md:inline"
+					>Atrévete.dev</span
+				>
 			</a>
 			<nav class="hidden items-center gap-6 text-sm md:flex">
 				{#each links as link (link.href)}
-					<a href={link.href} class="transition hover:text-secondary">{link.label}</a>
+					<a href={link.href} class="transition hover:text-primary-foreground">{link.label}</a>
 				{/each}
 			</nav>
 
 			<!-- Mobile Navigation -->
 			<Sheet.Root bind:open>
 				<Sheet.Trigger class="md:hidden">
-					<Button variant="ghost" size="sm" class="text-secondary">
+					<Button variant="ghost" size="sm" class="text-primary-foreground">
 						<Menu class="size-6" />
 						<span class="sr-only">Abrir menú de navegación</span>
 					</Button>
 				</Sheet.Trigger>
-				<Sheet.Content side="right" class="w-72 bg-primary text-secondary">
+				<Sheet.Content side="right" class="w-72 bg-primary text-primary-foreground">
 					<Sheet.Header>
-						<Sheet.Title class="text-secondary">Atrévete.dev</Sheet.Title>
+						<Sheet.Title class="text-primary-foreground">Atrévete.dev</Sheet.Title>
 						<Sheet.Description class="sr-only">Menú de navegación principal</Sheet.Description>
 					</Sheet.Header>
 					<nav class="flex flex-col gap-1 px-4 text-base">
@@ -64,7 +66,7 @@
 							<a
 								href={link.href}
 								onclick={() => (open = false)}
-								class="rounded-md px-3 py-3 transition hover:bg-secondary/10 hover:text-secondary"
+								class="rounded-md px-3 py-3 transition hover:bg-secondary/10 hover:text-primary-foreground"
 							>
 								{link.label}
 							</a>
@@ -93,6 +95,7 @@
 		/>
 		<span class="sr-only">Toggle theme</span>
 	</Button>
+
 	<footer class="bg-primary p-8 text-primary-foreground">
 		<div
 			class="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 sm:flex-row sm:justify-between"

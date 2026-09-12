@@ -12,11 +12,8 @@
 
 <div
 	bind:this={ref}
-	data-slot="card-action"
-	class={cn(
-		"col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-		className
-	)}
+	data-slot="field-label"
+	class={cn("gap-2 leading-snug text-sm font-medium group-data-[disabled=true]/field:opacity-50 flex w-fit items-center", className)}
 	{...restProps}
 >
 	{@render children?.()}
