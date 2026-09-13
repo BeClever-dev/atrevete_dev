@@ -8,6 +8,12 @@
 	import whatsapp from '$lib/assets/svg/whatsapp.svg';
 	import { resolve, asset } from '$app/paths';
 	import { LineChart } from 'layerchart';
+	import Carousel from '$lib/components/ui/carousel/carousel.svelte';
+	import AutoScroll from 'embla-carousel-auto-scroll';
+	import CarouselContent from '@/components/ui/carousel/carousel-content.svelte';
+	import CarouselItem from '@/components/ui/carousel/carousel-item.svelte';
+	import CardContent from '@/components/ui/card/card-content.svelte';
+	import AspectRatio from '@/components/ui/aspect-ratio/aspect-ratio.svelte';
 
 	let width = $state<number>(0);
 	const formatter = new Intl.DateTimeFormat('es-CL', { month: 'long' });
@@ -201,6 +207,59 @@
 		</div>
 	</section>
 
+	<section id="fidelidad" class="space-y-8">
+		<div class="max-w-2xl space-y-3">
+			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Fidelidad</p>
+			<h2 class="text-3xl font-semibold tracking-tight">
+				¡Hasta un 20% de descuento por preferirnos!
+			</h2>
+			<p class="text-muted-foreground">
+				Nos alegra que nos prefieras, y queremos alegrarte de la misma manera. Es por eso que hemos
+				decidido que tu tiempo con nosotros debe ser recompensado con un 10% de descuento <b
+					>permanente</b
+				> en tu suscripción tras tus primeros 6 meses con nosotros, y con un 20% tras un año.
+			</p>
+		</div>
+		<div class="w-full">
+			<Chart.Container config={chartConfig} class="h-55 w-full sm:h-80">
+				<LineChart
+					data={chartData}
+					x="month"
+					y="discount"
+					series={[
+						{
+							key: 'discount',
+							color: chartConfig.discount.color
+						}
+					]}
+					props={{
+						xAxis: {
+							format: (v) => (width >= 980 ? v : v.slice(0, 3)),
+							ticks: width >= 980 ? undefined : 4
+						},
+						yAxis: {
+							format: (v) => v + '%'
+						},
+						spline: {
+							strokeWidth: 2.5
+						}
+					}}
+				>
+					{#snippet tooltip()}
+						{#snippet formatter(item: unknown)}
+							{@const value = (item as { value: number }).value}
+							<span class="font-medium">
+								{value === 0 ? 'Sin descuentos' : `¡Descuento del ${value}%!`}
+							</span>
+						{/snippet}
+
+						<Chart.Tooltip label="Descuento" hideIndicator hideLabel {formatter} />
+					{/snippet}
+				</LineChart>
+			</Chart.Container>
+		</div>
+	</section>
+
 	<section id="planes" class="space-y-6">
 		<div class="max-w-2xl space-y-3">
 			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Planes flexibles</p>
@@ -339,57 +398,37 @@
 		</div>
 	</section>
 
-	<section id="fidelidad" class="space-y-8">
+	<section id="clientes" class="space-y-8">
 		<div class="max-w-2xl space-y-3">
-			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Fidelidad</p>
+			<p class="text-sm font-medium tracking-[0.25em] text-primary uppercase">Clientes</p>
 			<h2 class="text-3xl font-semibold tracking-tight">
-				¡Hasta un 20% de descuento por preferirnos!
+				Empresas y emprendedores que ya nos prefieren
 			</h2>
-			<p class="text-muted-foreground">
-				Nos alegra que nos prefieras, y queremos alegrarte de la misma manera. Es por eso que hemos
-				decidido que tu tiempo con nosotros debe ser recompensado con un 10% de descuento <b
-					>permanente</b
-				> en tu suscripción tras tus primeros 6 meses con nosotros, y con un 20% tras un año.
-			</p>
 		</div>
-		<div class="w-full">
-			<Chart.Container config={chartConfig} class="h-55 w-full sm:h-80">
-				<LineChart
-					data={chartData}
-					x="month"
-					y="discount"
-					series={[
-						{
-							key: 'discount',
-							color: chartConfig.discount.color
-						}
-					]}
-					props={{
-						xAxis: {
-							format: (v) => (width >= 980 ? v : v.slice(0, 3)),
-							ticks: width >= 980 ? undefined : 4
-						},
-						yAxis: {
-							format: (v) => v + '%'
-						},
-						spline: {
-							strokeWidth: 2.5
-						}
-					}}
-				>
-					{#snippet tooltip()}
-						{#snippet formatter(item: unknown)}
-							{@const value = (item as { value: number }).value}
-							<span class="font-medium">
-								{value === 0 ? 'Sin descuentos' : `¡Descuento del ${value}%!`}
-							</span>
-						{/snippet}
-
-						<Chart.Tooltip label="Descuento" hideIndicator hideLabel {formatter} />
-					{/snippet}
-				</LineChart>
-			</Chart.Container>
-		</div>
+		<Carousel
+			class="w-full "
+			plugins={[AutoScroll({ active: true })]}
+			opts={{
+				align: 'start',
+				loop: true
+			}}
+		>
+			<CarouselContent>
+				{#each ['steel panel', 'symac', 'patito lector'] as client (client)}
+					<CarouselItem class="md:basis-1/2 lg:basis-1/4">
+						<div class="p-1">
+							<AspectRatio ratio={16 / 9} class="rounded-lg border bg-card p-6">
+								<img
+									src={asset(`/clients/${client}.png`)}
+									alt="Logo de {client}"
+									class="h-full w-full rounded-lg object-contain grayscale-75 transition-all duration-300 hover:grayscale-0"
+								/>
+							</AspectRatio>
+						</div>
+					</CarouselItem>
+				{/each}
+			</CarouselContent>
+		</Carousel>
 	</section>
 
 	<section id="contacto" class="rounded-3xl border border-border/80 bg-card p-8 shadow-sm">
